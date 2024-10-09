@@ -101,7 +101,7 @@ body {
 }
 
 .card-image, .other-image {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
