@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.container {
+    perspective: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gift-card {
+    width: 280px;
+    height: 360px;
+    position: relative;
+    margin: 20px; /* Adjusted margin for consistent spacing */
+    transition: transform 0.6s; /* Faster transition for better responsiveness */
+    transform-style: preserve-3d;
+    animation: bookScroll 0.6s ease forwards;
+}
+
+.gift-card:hover .inside {
+    transform: rotateY(180deg); /* Apply rotation on hover */
+}
+
+.card {
+    width: 100%; /* Full width for responsiveness */
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 1rem; /* Adjusted padding */
+    position: relative; /* Changed to relative */
+}
+
+.outside {
+    background-color: blanchedalmond;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    border-radius: 20px; /* Added border-radius for consistency */
+    padding: 1rem; /* Added padding for content spacing */
+}
+
+.outside h1 {
+    font-size: 2rem; /* Adjusted for responsiveness */
+    font-weight: bold;
+    color: salmon;
+    margin-bottom: 10px; /* Adjusted margin */
+}
+
+.marquee {
+    color: red;
+    margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.inside {
+    background-color: rgba(255, 244, 79);
+    box-shadow: inset 0 52px 100px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    position: absolute; /* Absolute positioning for flipping */
+    top: 0; /* Covering the outside */
+    left: 0; /* Covering the outside */
+    border-radius: 20px; /* Matching the outside */
+    padding: 1rem; /* Added padding for content spacing */
+}
+
+.inside h1 {
+    font-size: 1.5rem; /* Adjusted for responsiveness */
+    font-weight: bold;
+    margin-top: 10px; /* Adjusted margin */
+}
+
+.inside p {
+    font-size: 0.9rem; /* Adjusted paragraph font size */
+    margin-top: 5px; /* Added margin for spacing */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .gift-card {
+        width: 90%; /* Full width on mobile */
+        height: auto; /* Auto height to maintain aspect ratio */
+    }
+
+    .outside h1, .inside h1 {
+        font-size: 1.5rem; /* Smaller font on mobile */
+    }
+
+    .outside p, .inside p {
+        font-size: 0.9rem; /* Adjusted paragraph font size */
+    }
+}
+
+.card-image, .other-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #f0a500;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
